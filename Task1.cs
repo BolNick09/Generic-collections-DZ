@@ -24,20 +24,15 @@ namespace Generic_collections
         }
         public void translate()
         {
-            // Запросить у пользователя направление перевода
             Console.WriteLine("Введите направление перевода (0 - русский-английский 1 - английский-русский):");
             int direction = Int32.Parse(Console.ReadLine());
 
-            // Запросить у пользователя слово для перевода
             Console.WriteLine("Введите слово для перевода:");
             string word = Console.ReadLine();
-
-            // Выполнить перевод
             string translation = "";
-            if (direction == 0)
-            {
+            if (direction == 0)            
                 translation = (string)dictionary[word];
-            }
+            
             else if (direction == 1)
             {
                 foreach (var entry in dictionary)
@@ -54,11 +49,7 @@ namespace Generic_collections
                 Console.WriteLine("Неверное направление перевода");
                 return;
             }
-
-            // Вывести перевод
             Console.WriteLine($"Перевод: {translation}");
         }
-
-
     }
 }
